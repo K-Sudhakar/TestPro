@@ -1,0 +1,1157 @@
+
+using Microsoft.EntityFrameworkCore;
+
+namespace PH.MomPath.EF.Entities;
+
+[Keyless]
+public partial class NextPHProgramIDResult
+{
+    public string PHProgramID { get; set; }
+}
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class NicuAdmission
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Note
+{
+    public int NoteId { get; set; }
+
+    public int MemberId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string NoteType { get; set; } = null!;
+
+    public string? NoteBody { get; set; }
+
+    public string? NoteVerificationType { get; set; }
+
+    public string? NoteCosignedBy { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public int ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class NoteType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Notification
+{
+    public int NotificationId { get; set; }
+
+    public string Source { get; set; } = null!;
+
+    public int MemberId { get; set; }
+
+    public string Title { get; set; } = null!;
+
+    public DateTime ReceiveDate { get; set; }
+
+    public string Category { get; set; } = null!;
+
+    public string? DescriptionText { get; set; }
+
+    public int CreatedBy { get; set; }
+
+    public int ModifiedBy { get; set; }
+
+    public DateTime CreatedOn { get; set; }
+
+    public DateTime ModifiedOn { get; set; }
+
+    public bool Active { get; set; }
+
+    public bool IsDeleted { get; set; }
+
+    public int? ReviewedBy { get; set; }
+
+    public DateTime? ReviewedOn { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class NotificationCategory
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class NotificationMethodType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class OptOutStatus
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class PainMedicationPreference
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class PainMedicationPreferenceType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Permission
+{
+    public int PermissionId { get; set; }
+
+    public string Name { get; set; } = null!;
+
+    public string? Description { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class PersonAttendingBirth
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class PhoneType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class PhysicianSpecialty
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class PlannedDeliveryType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class PlanOfCare
+{
+    public int PlanOfCareId { get; set; }
+
+    public int? ProgramId { get; set; }
+
+    public DateOnly? InitialNotificationDate { get; set; }
+
+    public DateOnly? DateMemberNotifiedPoc { get; set; }
+
+    public string? NotificationMethodCode { get; set; }
+
+    public DateTime? CreatedDate { get; set; }
+
+    public int? CreatedByUserId { get; set; }
+
+    public DateTime? ModifiedDate { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+
+    public bool? IsDeleted { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class PregnancyOutcomeType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+
+    public int? SortOrder { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Program
+{
+    public int ProgramId { get; set; }
+
+    public int MemberId { get; set; }
+
+    public string? PhprogramId { get; set; }
+
+    public DateOnly? StartDate { get; set; }
+
+    public DateTime? CloseDate { get; set; }
+
+    public string? ClosureReason { get; set; }
+
+    public DateTime? ReopenDate { get; set; }
+
+    public string? ReopenReason { get; set; }
+
+    public int? ProgramOwnerId { get; set; }
+
+    public string? CmStatusCode { get; set; }
+
+    public string? CmRiskLevelCode { get; set; }
+
+    public string? RiskLevelSourceCode { get; set; }
+
+    public string? CmStratificationLevelCode { get; set; }
+
+    public string? ProgramInitiationSource { get; set; }
+
+    public string? ReferralTypeCode { get; set; }
+
+    public string? MaternityPhaseCode { get; set; }
+
+    public string? ProgramDuration { get; set; }
+
+    public string? MshcnTypeCode { get; set; }
+
+    public DateTime? MshcnTermDate { get; set; }
+
+    public string? MshcnDeclinedReasonCode { get; set; }
+
+    public bool? MshcnEligible { get; set; }
+
+    public string? MshcnTermReasonCode { get; set; }
+
+    public DateTime? MshcnEffectiveDate { get; set; }
+
+    public string? ProgramStatusCode { get; set; }
+
+    public int? CmconsultantId { get; set; }
+
+    public bool IsMonitoring { get; set; }
+
+    public bool IsActive { get; set; }
+
+    public bool SdoHonly { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public int ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramAidAttribute
+{
+    public int AidAttributeId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string AidAttribute { get; set; } = null!;
+
+    public DateTime? EffectiveDate { get; set; }
+
+    public DateTime? TermDate { get; set; }
+
+    public bool IsActive { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramAllergiesDrug
+{
+    public int ProgramAllergiesDrugsId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string DrugAllergyCode { get; set; } = null!;
+
+    public string? OtherDrugAllergy { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public int ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramAllergiesDrugsPivotHistory
+{
+    public int EventId { get; set; }
+
+    public int ProgramAllergiesDrugsId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string ColumnName { get; set; } = null!;
+
+    public string? OldValue { get; set; }
+
+    public string? NewValue { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int ChangedByUserId { get; set; }
+
+    public string Status { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramAllergiesFood
+{
+    public int ProgramAllergiesFoodId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string FoodAllergyCode { get; set; } = null!;
+
+    public string? OtherFoodAllergy { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public int ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramAllergiesFoodsPivotHistory
+{
+    public int EventId { get; set; }
+
+    public int ProgramAllergiesFoodId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string ColumnName { get; set; } = null!;
+
+    public string? OldValue { get; set; }
+
+    public string? NewValue { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int ChangedByUserId { get; set; }
+
+    public string Status { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramAllergiesPivotHistory
+{
+    public int EventId { get; set; }
+
+    public int ProgramAllergyId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string ColumnName { get; set; } = null!;
+
+    public string? OldValue { get; set; }
+
+    public string? NewValue { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int ChangedByUserId { get; set; }
+
+    public string Status { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramAllergy
+{
+    public int ProgramAllergyId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public DateTime DateAssessed { get; set; }
+
+    public bool LatexAllergy { get; set; }
+
+    public string? OtherFoodAllergy { get; set; }
+
+    public string? OtherDrugAllergy { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public int ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramAllergyHistory
+{
+    public int ProgramAllergyId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public DateTime DateAssessed { get; set; }
+
+    public bool LatexAllergy { get; set; }
+
+    public string? OtherFoodAllergy { get; set; }
+
+    public string? OtherDrugAllergy { get; set; }
+
+    public DateTime ValidFromUtc { get; set; }
+
+    public DateTime ValidToUtc { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramClosureReason
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramConsultant
+{
+    public int ProgramConsultantId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string ConsultantTypeCode { get; set; } = null!;
+
+    public int? CreatedByUserId { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramDiscussionTopic
+{
+    public int ProgramDiscussionTopicId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string DiscussionSubTopicCode { get; set; } = null!;
+
+    public DateTime DiscussedDateTime { get; set; }
+
+    public DateTime Created { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public DateTime? Modified { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramDiscussionTopicPivotHistory
+{
+    public int EventId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public int ProgramDiscussionTopicId { get; set; }
+
+    public string ColumnName { get; set; } = null!;
+
+    public string? OldValue { get; set; }
+
+    public string? NewValue { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int ChangedByUserId { get; set; }
+
+    public string Status { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramHistory
+{
+    public int ProgramId { get; set; }
+
+    public int? MemberId { get; set; }
+
+    public string? PhprogramId { get; set; }
+
+    public DateOnly? StartDate { get; set; }
+
+    public DateTime? CloseDate { get; set; }
+
+    public int? ClosureReasonId { get; set; }
+
+    public DateTime? ReopenDate { get; set; }
+
+    public int? ReopenReasonId { get; set; }
+
+    public int? ProgramOwnerId { get; set; }
+
+    public int? CmStatusId { get; set; }
+
+    public int? CmRiskLevelId { get; set; }
+
+    public int? RiskLevelSourceId { get; set; }
+
+    public int? CmStratificationLevelId { get; set; }
+
+    public int? ReferralTypeId { get; set; }
+
+    public int? MaternityPhaseId { get; set; }
+
+    public DateTime? CreatedDate { get; set; }
+
+    public int? CreatedByUserId { get; set; }
+
+    public DateTime? ModifiedDate { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+
+    public bool? IsDeleted { get; set; }
+
+    public DateTime SysStartTime { get; set; }
+
+    public DateTime SysEndTime { get; set; }
+
+    public int? ProgramDurationId { get; set; }
+
+    public int? MshcnTypeId { get; set; }
+
+    public DateTime? MshcnTermDate { get; set; }
+
+    public int? MshcnDeclinedReasonId { get; set; }
+
+    public int? MshcnEligibleId { get; set; }
+
+    public int? MshcnTermReasonId { get; set; }
+
+    public DateTime? MshcnEffectiveDate { get; set; }
+
+    public bool? IsMonitoring { get; set; }
+
+    public bool? IsActive { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramImmunization
+{
+    public int ProgramImmunizationId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public DateTime DateGiven { get; set; }
+
+    public string? ImmunizationCode { get; set; }
+
+    public string? OtherImmunization { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public int ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramImmunizationsPivotHistory
+{
+    public int EventId { get; set; }
+
+    public int ProgramImmunizationId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string ColumnName { get; set; } = null!;
+
+    public string? OldValue { get; set; }
+
+    public string? NewValue { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int ChangedByUserId { get; set; }
+
+    public string Status { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramInfant
+{
+    public int ProgramInfantId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string Name { get; set; } = null!;
+
+    public DateTime Birthdate { get; set; }
+
+    public string? GenderCode { get; set; }
+
+    public int? GestationalAgeWeek { get; set; }
+
+    public int? GestationalAgeDay { get; set; }
+
+    public decimal? BirthWeightPounds { get; set; }
+
+    public decimal? BirthWeightOunces { get; set; }
+
+    public string BirthOrder { get; set; } = null!;
+
+    public string? NicuAdmissionCode { get; set; }
+
+    public string? PhChartId { get; set; }
+
+    public string? NicuCm { get; set; }
+
+    public bool InfantExpired { get; set; }
+
+    public DateTime Created { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public DateTime? Modified { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramInfantPivotHistory
+{
+    public int EventId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public int ProgramInfantId { get; set; }
+
+    public string ColumnName { get; set; } = null!;
+
+    public string? OldValue { get; set; }
+
+    public string? NewValue { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int ChangedByUserId { get; set; }
+
+    public string Status { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramLength
+{
+    public int ProgramLengthId { get; set; }
+
+    public int Length { get; set; }
+
+    public string Description { get; set; } = null!;
+
+    public int ApplicationId { get; set; }
+
+    public int ClientId { get; set; }
+
+    public bool IsActive { get; set; }
+
+    public Guid? CreatedByUserId { get; set; }
+
+    public DateTime? CreatedDate { get; set; }
+
+    public Guid? ModifiedByUserId { get; set; }
+
+    public DateTime? ModifiedDate { get; set; }
+
+    public virtual Application Application { get; set; } = null!;
+
+    public virtual ICollection<ChecklistTemplate> ChecklistTemplates { get; set; } = new List<ChecklistTemplate>();
+
+    public virtual ICollection<LetterTemplate> LetterTemplates { get; set; } = new List<LetterTemplate>();
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramMaterialChecklist
+{
+    public int ProgramMaterialChecklistId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public DateTime SentDateTime { get; set; }
+
+    public string? Notes { get; set; }
+
+    public DateTime Created { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public DateTime? Modified { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramMaterialChecklistArticle
+{
+    public int ProgramMaterialChecklistArticleId { get; set; }
+
+    public int ProgramMaterialChecklistId { get; set; }
+
+    public string MaterialChecklistArticleCode { get; set; } = null!;
+
+    public DateTime Created { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public DateTime? Modified { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramMaterialChecklistDeliveryMethod
+{
+    public int ProgramMaterialChecklistDeliveryMethodId { get; set; }
+
+    public int ProgramMaterialChecklistId { get; set; }
+
+    public string DeliveryMethodCode { get; set; } = null!;
+
+    public DateTime Created { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public DateTime? Modified { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramMedication
+{
+    public int ProgramMedicationId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string MedicationCode { get; set; } = null!;
+
+    public DateTime? DateAssessed { get; set; }
+
+    public DateTime? DateReassessed { get; set; }
+
+    public DateTime? DateDiscontinued { get; set; }
+
+    public string Dose { get; set; } = null!;
+
+    public string Concentration { get; set; } = null!;
+
+    public bool ConcentrationNa { get; set; }
+
+    public string FrequencyCode { get; set; } = null!;
+
+    public string RouteCode { get; set; } = null!;
+
+    public bool Discrepancy { get; set; }
+
+    public string? DiscrepancyReasonCode { get; set; }
+
+    public bool MedicationReconciled { get; set; }
+
+    public string? MedicationReasonNotReconciledCode { get; set; }
+
+    public int? CreatedByUserId { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+
+    public string? OtherMedication { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramMedicationsPivotHistory
+{
+    public int EventId { get; set; }
+
+    public int ProgramMedicationId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string ColumnName { get; set; } = null!;
+
+    public string? OldValue { get; set; }
+
+    public string? NewValue { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int ChangedByUserId { get; set; }
+
+    public string Status { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramPivotHistory
+{
+    public int EventId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public int MemberId { get; set; }
+
+    public string ColumnName { get; set; } = null!;
+
+    public string? OldValue { get; set; }
+
+    public string? NewValue { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int ChangedByUserId { get; set; }
+
+    public string Status { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramReopenReason
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProgramStatus
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProvderSpecialty
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Provider
+{
+    public int ProviderId { get; set; }
+
+    public string? ProviderTypeCode { get; set; }
+
+    public string? ProviderTypeDetailCode { get; set; }
+
+    public string? OtherDetail { get; set; }
+
+    public string? ProviderFirstName { get; set; }
+
+    public string? ProviderMiddleName { get; set; }
+
+    public string? ProviderLastName { get; set; }
+
+    public string? PracticeName { get; set; }
+
+    public string? ProviderPhoneExt { get; set; }
+
+    public string? ProviderPhone { get; set; }
+
+    public string? Address1 { get; set; }
+
+    public string? Address2 { get; set; }
+
+    public string? City { get; set; }
+
+    public string? State { get; set; }
+
+    public string? Zip { get; set; }
+
+    public string? Npi { get; set; }
+
+    public string? ProviderEmail { get; set; }
+
+    public bool ProviderReferral { get; set; }
+
+    public string? ContactName { get; set; }
+
+    public string? ContactPhone { get; set; }
+
+    public string? ContactPhoneExt { get; set; }
+
+    public string? ContactFax { get; set; }
+
+    public string? ContactNotes { get; set; }
+
+    public int? CreatedByUserId { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProviderPivotHistory
+{
+    public int EventId { get; set; }
+
+    public int ProviderId { get; set; }
+
+    public string ColumnName { get; set; } = null!;
+
+    public string? OldValue { get; set; }
+
+    public string? NewValue { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int ChangedByUserId { get; set; }
+
+    public string Status { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProviderSpecialty
+{
+    public int ProviderSpecialtyId { get; set; }
+
+    public int ProviderId { get; set; }
+
+    public int SpecialtyId { get; set; }
+
+    public int? CreatedByUserId { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProvidersPivotHistory
+{
+    public int EventId { get; set; }
+
+    public int? MemberId { get; set; }
+
+    public int? ProgramId { get; set; }
+
+    public int ProviderId { get; set; }
+
+    public string ColumnName { get; set; } = null!;
+
+    public string? OldValue { get; set; }
+
+    public string? NewValue { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int ChangedByUserId { get; set; }
+
+    public string Status { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProviderType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}

@@ -1,0 +1,725 @@
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ProviderTypeDetail
+{
+    public string Code { get; set; } = null!;
+
+    public string? ProviderTypeCode { get; set; }
+
+    public string Description { get; set; } = null!;
+
+    public int? SortOrder { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Race
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+
+    public int SortOrder { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ReferralPhase
+{
+    public int ReferralPhaseId { get; set; }
+
+    public string? Description { get; set; }
+
+    public int? SortOrder { get; set; }
+
+    public bool? IsActive { get; set; }
+
+    public bool? IsDeleted { get; set; }
+
+    public DateTime? CreatedDateUtc { get; set; }
+
+    public int? CreatedByUserId { get; set; }
+
+    public DateTime? ModifiedDateUtc { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+
+    public virtual ICollection<Program> Programs { get; set; } = new List<Program>();
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ReferralType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Relationship
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Religion
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class RiskLevelMapping
+{
+    public int RiskLevelMappingId { get; set; }
+
+    public int SurveyId { get; set; }
+
+    public string? QuestionIdentifier { get; set; }
+
+    public string? AnswerIdentifier { get; set; }
+
+    public bool IsHighRisk { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class RiskLevelSource
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Role
+{
+    public int RoleId { get; set; }
+
+    public string? Name { get; set; }
+
+    public string? Description { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class RolePermission
+{
+    public int RolePermissionId { get; set; }
+
+    public int RoleId { get; set; }
+
+    public int PermissionId { get; set; }
+
+    public bool IsActive { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public DateTime ModifiedDateUtc { get; set; }
+
+    public int ModifiedByUserId { get; set; }
+
+    public bool IsDeleted { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Sdoh
+{
+    public int SdohId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public int? ProblemId { get; set; }
+
+    public string DomainCode { get; set; } = null!;
+
+    public string FactorCode { get; set; } = null!;
+
+    public DateTime DateIdentified { get; set; }
+
+    public string? OutcomeCode { get; set; }
+
+    public DateTime? OutcomeDate { get; set; }
+
+    public int? CreatedByUserId { get; set; }
+
+    public DateTime CreatedDate { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class SdohDomain
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class SdohFactor
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+
+    public string? ParentCode { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class SdohFactorReferral
+{
+    public string FactorCode { get; set; } = null!;
+
+    public string ReferralCode { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class SdohOutcome
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class SdohReferral
+{
+    public int SdohReferralId { get; set; }
+
+    public int SdohId { get; set; }
+
+    public string ReferralCode { get; set; } = null!;
+
+    public DateTime ReferralDate { get; set; }
+
+    public string ReferralSuccessCode { get; set; } = null!;
+
+    public int? CreatedByUserId { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class SdohReferralSuccess
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class SdohReferralType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ServicePlanOutcome
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class SexualOrientation
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class State
+{
+    public string Code { get; set; } = null!;
+
+    public string Name { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Survey
+{
+    public int SurveyId { get; set; }
+
+    public string TypeCode { get; set; } = null!;
+
+    public string? Data { get; set; }
+
+    public int? Version { get; set; }
+
+    public int? ClientId { get; set; }
+
+    public bool IsDeleted { get; set; }
+
+    public DateTime Created { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public DateTime? Modified { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class SurveyType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class TaskState
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class TaskStatus
+{
+    public int TaskStatusId { get; set; }
+
+    public string? Description { get; set; }
+
+    public int? SortOrder { get; set; }
+
+    public bool? IsActive { get; set; }
+
+    public bool? IsDeleted { get; set; }
+
+    public DateTime? CreatedDateUtc { get; set; }
+
+    public int? CreatedByUserId { get; set; }
+
+    public DateTime? ModifiedDateUtc { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class UrgencyLevel
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class User
+{
+    public int UserId { get; set; }
+
+    public string UserName { get; set; } = null!;
+
+    public string? FirstName { get; set; }
+
+    public string? MiddleName { get; set; }
+
+    public string? LastName { get; set; }
+
+    public string? Initials { get; set; }
+
+    public string? FullName { get; set; }
+
+    public string? Email { get; set; }
+
+    public bool Active { get; set; }
+
+    public string? Credentials { get; set; }
+
+    public string? UserImage { get; set; }
+
+    public string? Extension { get; set; }
+
+    public string? Adguid { get; set; }
+
+    public Guid? AzureOid { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int? CreatedByUserId { get; set; }
+
+    public DateTime ModifiedDateUtc { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class UserRole
+{
+    public int UserRoleId { get; set; }
+
+    public int RoleId { get; set; }
+
+    public int UserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class UserSignature
+{
+    public int UserSignatureId { get; set; }
+
+    public int ApplicationId { get; set; }
+
+    public int UserId { get; set; }
+
+    public int DocumentMetadataId { get; set; }
+
+    public Guid CreatedByUserId { get; set; }
+
+    public DateTime CreatedDate { get; set; }
+
+    public Guid? ModifiedByUserId { get; set; }
+
+    public DateTime? ModifiedDate { get; set; }
+
+    public virtual Application Application { get; set; } = null!;
+
+    public virtual DocumentMetadatum DocumentMetadata { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class WildflowerActivityDetail
+{
+    public int WildflowerActivityDetailId { get; set; }
+
+    public string? EventType { get; set; }
+
+    public string? EventAction { get; set; }
+
+    public string? ScreenType { get; set; }
+
+    public string? ScreenCategory { get; set; }
+
+    public string? ScreenName { get; set; }
+
+    public string? PhoneNumber { get; set; }
+
+    public string? UrlText { get; set; }
+
+    public string? SurveyKey { get; set; }
+
+    public int? QuestionAnswerCount { get; set; }
+
+    public int? SurveyScore { get; set; }
+
+    public string? AppUserId { get; set; }
+
+    public DateTime? EventTimeStamp { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class WildflowerRegistrationDetail
+{
+    public int WildflowerRegistrationDetailId { get; set; }
+
+    public string? AppUserId { get; set; }
+
+    public string? PatientId { get; set; }
+
+    public string? MemberId { get; set; }
+
+    public string? ClientName { get; set; }
+
+    public string? FirstName { get; set; }
+
+    public string? LastName { get; set; }
+
+    public string? Email { get; set; }
+
+    public DateOnly? Birthdate { get; set; }
+
+    public string? Gender { get; set; }
+
+    public string? Race { get; set; }
+
+    public string? PhoneNumber { get; set; }
+
+    public string? Journey { get; set; }
+
+    public DateOnly? DeliveryDate { get; set; }
+
+    public bool? Nicu { get; set; }
+
+    public bool? HighRisk { get; set; }
+
+    public DateOnly? DueDate { get; set; }
+
+    public DateOnly? RegistrationDate { get; set; }
+
+    public DateOnly? LastActivityDate { get; set; }
+
+    public DateOnly? OnboardingCompleteDate { get; set; }
+
+    public bool? FirstPregnancy { get; set; }
+
+    public string? DeliveryType { get; set; }
+
+    public bool? IsExpectingMultiples { get; set; }
+
+    public int? GestationalAgeAtInstall { get; set; }
+
+    public int? TrimesterAtInstall { get; set; }
+
+    public DateOnly? PregCheckinCompleteDate { get; set; }
+
+    public DateOnly? PostPartumCheckinCompleteDate { get; set; }
+
+    public DateOnly? GestationalDiabetesReportDate { get; set; }
+
+    public DateOnly? GestationalHypertensionReportDate { get; set; }
+
+    public DateOnly? PregnancyLossReportDate { get; set; }
+
+    public bool? ShowPregnancyLossContent { get; set; }
+
+    public DateOnly? PregnancyLossDate { get; set; }
+
+    public string? PregnancyLossType { get; set; }
+
+    public DateOnly? MentalHealthCheckinCompleteDate { get; set; }
+
+    public DateOnly? DeliveryCheckinCompleteDate { get; set; }
+
+    public string? AppLanguage { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class WorkItem
+{
+    public int WorkItemId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string WorkItemDescriptionCode { get; set; } = null!;
+
+    public string UrgencyLevelCode { get; set; } = null!;
+
+    public int AssignedToUserId { get; set; }
+
+    public string? Comments { get; set; }
+
+    public DateTime DueDateUtc { get; set; }
+
+    public string StatusCode { get; set; } = null!;
+
+    public string? FindingsCode { get; set; }
+
+    public DateTime? CompletedDate { get; set; }
+
+    public DateTime Created { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public DateTime? Modified { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class WorkItemDescription
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+
+    public string? UrgencyLevelCode { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class WorkItemFinding
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class WorkItemPivotHistory
+{
+    public int EventId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public int WorkItemId { get; set; }
+
+    public string WorkItemDescription { get; set; } = null!;
+
+    public string ColumnName { get; set; } = null!;
+
+    public string? OldValue { get; set; }
+
+    public string? NewValue { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int ChangedByUserId { get; set; }
+
+    public string Status { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class WorkItemStatus
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}

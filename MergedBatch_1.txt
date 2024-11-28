@@ -1,0 +1,1059 @@
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class AddressType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Application
+{
+    public int ApplicationId { get; set; }
+
+    public string? ApplicationName { get; set; }
+
+    public bool IsActive { get; set; }
+
+    public virtual ICollection<CaseType> CaseTypes { get; set; } = new List<CaseType>();
+
+    public virtual ICollection<ChecklistTemplate> ChecklistTemplates { get; set; } = new List<ChecklistTemplate>();
+
+    public virtual ICollection<DocumentMetadatum> DocumentMetadata { get; set; } = new List<DocumentMetadatum>();
+
+    public virtual ICollection<GeneratedLetter> GeneratedLetters { get; set; } = new List<GeneratedLetter>();
+
+    public virtual ICollection<LetterTemplate> LetterTemplates { get; set; } = new List<LetterTemplate>();
+
+    public virtual ICollection<LetterType> LetterTypes { get; set; } = new List<LetterType>();
+
+    public virtual ICollection<ProgramLength> ProgramLengths { get; set; } = new List<ProgramLength>();
+
+    public virtual ICollection<UserSignature> UserSignatures { get; set; } = new List<UserSignature>();
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Appointment
+{
+    public int AppointmentId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public DateOnly AppointmentDate { get; set; }
+
+    public TimeOnly? AppointmentTime { get; set; }
+
+    public string? ProviderTypeCode { get; set; }
+
+    public string? ProviderDetailsCode { get; set; }
+
+    public string? ProviderOtherDetail { get; set; }
+
+    public int? ProviderId { get; set; }
+
+    public string? ProviderName { get; set; }
+
+    public string? PracticeName { get; set; }
+
+    public string? AppointmentTypeCode { get; set; }
+
+    public string? AppointmentStatusCode { get; set; }
+
+    public string? Notes { get; set; }
+
+    public string? OtherImmunization { get; set; }
+
+    public string? OtherScreening { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public int ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class AppointmentImmunization
+{
+    public int AppointmentImmunizationId { get; set; }
+
+    public int AppointmentId { get; set; }
+
+    public string ImmunizationCode { get; set; } = null!;
+
+    public int CreatedByUserId { get; set; }
+
+    public int ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class AppointmentImmunizationType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+
+    public int? SortOrder { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class AppointmentPivotHistory
+{
+    public int EventId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public int AppointmentId { get; set; }
+
+    public string ColumnName { get; set; } = null!;
+
+    public string? OldValue { get; set; }
+
+    public string? NewValue { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int ChangedByUserId { get; set; }
+
+    public string Status { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class AppointmentScreening
+{
+    public int AppointmentScreeningId { get; set; }
+
+    public int AppointmentId { get; set; }
+
+    public string ScreeningCode { get; set; } = null!;
+
+    public int CreatedByUserId { get; set; }
+
+    public int ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class AppointmentScreeningType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class AppointmentStatus
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class AppointmentType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ArticleDeliveryMethod
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Assessment
+{
+    public int AssessmentId { get; set; }
+
+    public int SurveyId { get; set; }
+
+    public int Version { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public string Data { get; set; } = null!;
+
+    public decimal Score { get; set; }
+
+    public string? CmRiskLevelCode { get; set; }
+
+    public DateTime Created { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public DateTime? Modified { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class AssessmentAnswer
+{
+    public int AssessmentAnswerId { get; set; }
+
+    public int QuestionId { get; set; }
+
+    public string? AnswerIdentifier { get; set; }
+
+    public string? AnswerText { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class AssessmentQuestion
+{
+    public int AssessmentQuestionId { get; set; }
+
+    public int SurveyId { get; set; }
+
+    public string? QuestionIdentifier { get; set; }
+
+    public string? QuestionText { get; set; }
+
+    public bool Conditional { get; set; }
+
+    public string? ConditionalQuestion { get; set; }
+
+    public string? ConditionalAnswer { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class AssessmentResult
+{
+    public int AssessmentResultId { get; set; }
+
+    public int AssessmentId { get; set; }
+
+    public int AssessmentQuestionId { get; set; }
+
+    public int? AssessmentAnswerId { get; set; }
+
+    public string? AnswerOtherValue { get; set; }
+
+    public string? ConditionalAnswer { get; set; }
+
+    public DateTime CreatedDate { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class BirthLocation
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class BirthPlan
+{
+    public int BirthPlanId { get; set; }
+
+    public int? ProgramId { get; set; }
+
+    public DateOnly? Lmpdate { get; set; }
+
+    public string? ExpectedPregnancyOutcome { get; set; }
+
+    public DateOnly? ExpectedDueDate { get; set; }
+
+    public DateOnly? ActualDeliveryDate { get; set; }
+
+    public DateOnly? ScheduledDeliveryDate { get; set; }
+
+    public DateOnly? DeliveryNotificationDate { get; set; }
+
+    public int? TermBirths { get; set; }
+
+    public int? PreTermBirths { get; set; }
+
+    public int? Gravida { get; set; }
+
+    public int? Para { get; set; }
+
+    public int? Abortions { get; set; }
+
+    public int? LivingChildren { get; set; }
+
+    public string? AnticipatedBirthLocation { get; set; }
+
+    public string? AnticipatedDeliveryProvider { get; set; }
+
+    public string? AnticipatedDeliveryFacility { get; set; }
+
+    public string? PersonAttendingBirth { get; set; }
+
+    public string? PainMedicationPreference { get; set; }
+
+    public bool? IsScheduledDelivery { get; set; }
+
+    public string? PlannedDeliveryType { get; set; }
+
+    public string? PregnancyOutcome { get; set; }
+
+    public string? DeliveryMode { get; set; }
+
+    public string? DeliveryPresentation { get; set; }
+
+    public int? GestationalAgeDays { get; set; }
+
+    public int? GestationalAgeWeeks { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public int ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class BirthPlanPivotHistory
+{
+    public int EventId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public int BirthPlanId { get; set; }
+
+    public string ColumnName { get; set; } = null!;
+
+    public string? OldValue { get; set; }
+
+    public string? NewValue { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int ChangedByUserId { get; set; }
+
+    public string Status { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Breastfeeding
+{
+    public int BreastfeedingId { get; set; }
+
+    public int? ProgramId { get; set; }
+
+    public string? BreastfeedingStatus { get; set; }
+
+    public DateOnly? BreastfeedingStartDate { get; set; }
+
+    public DateOnly? BreastfeedingEndDate { get; set; }
+
+    public bool? IsBreastPumpNeeded { get; set; }
+
+    public string? MemberEducated { get; set; }
+
+    public string? MemberGetBreastPump { get; set; }
+
+    public bool? IsLactationConsultantNeeded { get; set; }
+
+    public string? LactationConsultantReferral { get; set; }
+
+    public string? LactationConsultantCompleted { get; set; }
+
+    public DateOnly? LastConfirmedDateOfBreastfeeding { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public int ModifiedByUserId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class BreastfeedingPivotHistory
+{
+    public int EventId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public int BreastfeedingId { get; set; }
+
+    public string ColumnName { get; set; } = null!;
+
+    public string? OldValue { get; set; }
+
+    public string? NewValue { get; set; }
+
+    public DateTime CreatedDateUtc { get; set; }
+
+    public int ChangedByUserId { get; set; }
+
+    public string Status { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class BreastfeedingStatus
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+
+    public int? SortOrder { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CaseChecklist
+{
+    public int CaseChecklistId { get; set; }
+
+    public int CaseId { get; set; }
+
+    public int? GeneratedLetterId { get; set; }
+
+    public bool IsChecklistComplete { get; set; }
+
+    public int LanguageId { get; set; }
+
+    public Guid? CompletedByUserId { get; set; }
+
+    public DateTime? DateChecklistCancelled { get; set; }
+
+    public Guid? CreatedByUserId { get; set; }
+
+    public DateTime? CreatedDate { get; set; }
+
+    public Guid? ModifiedByUserId { get; set; }
+
+    public DateTime? ModifiedDate { get; set; }
+
+    public virtual ICollection<CaseChecklistCategory> CaseChecklistCategories { get; set; } = new List<CaseChecklistCategory>();
+
+    public virtual GeneratedLetter? GeneratedLetter { get; set; }
+
+    public virtual LetterLanguage Language { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CaseChecklistCategory
+{
+    public int CaseChecklistCategoryId { get; set; }
+
+    public int CaseChecklistId { get; set; }
+
+    public string Name { get; set; } = null!;
+
+    public int Order { get; set; }
+
+    public Guid? CreatedByUserId { get; set; }
+
+    public DateTime? CreatedDate { get; set; }
+
+    public Guid? ModifiedByUserId { get; set; }
+
+    public DateTime? ModifiedDate { get; set; }
+
+    public virtual CaseChecklist CaseChecklist { get; set; } = null!;
+
+    public virtual ICollection<CaseChecklistCategoryComponent> CaseChecklistCategoryComponents { get; set; } = new List<CaseChecklistCategoryComponent>();
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CaseChecklistCategoryComponent
+{
+    public int CaseChecklistCategoryComponentId { get; set; }
+
+    public int CaseChecklistCategoryId { get; set; }
+
+    public string Name { get; set; } = null!;
+
+    public int DocumentMetadataId { get; set; }
+
+    public bool IsSelected { get; set; }
+
+    public Guid? CreatedByUserId { get; set; }
+
+    public DateTime? CreatedDate { get; set; }
+
+    public Guid? ModifiedByUserId { get; set; }
+
+    public DateTime? ModifiedDate { get; set; }
+
+    public virtual CaseChecklistCategory CaseChecklistCategory { get; set; } = null!;
+
+    public virtual DocumentMetadatum DocumentMetadata { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CaseType
+{
+    public int CaseTypeId { get; set; }
+
+    public string? Name { get; set; }
+
+    public int ApplicationId { get; set; }
+
+    public virtual Application Application { get; set; } = null!;
+
+    public virtual ICollection<LetterTemplate> LetterTemplates { get; set; } = new List<LetterTemplate>();
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ChecklistCategory
+{
+    public int ChecklistCategoryId { get; set; }
+
+    public string Description { get; set; } = null!;
+
+    public bool IsActive { get; set; }
+
+    public Guid? CreatedByUserId { get; set; }
+
+    public DateTime? CreatedDate { get; set; }
+
+    public Guid? ModifiedByUserId { get; set; }
+
+    public DateTime? ModifiedDate { get; set; }
+
+    public virtual ICollection<ChecklistComponent> ChecklistComponents { get; set; } = new List<ChecklistComponent>();
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ChecklistComponent
+{
+    public int ChecklistComponentId { get; set; }
+
+    public string Name { get; set; } = null!;
+
+    public string? Description { get; set; }
+
+    public int ChecklistCategoryId { get; set; }
+
+    public int LanguageId { get; set; }
+
+    public int DocumentMetadataId { get; set; }
+
+    public bool IsActive { get; set; }
+
+    public Guid? CreatedByUserId { get; set; }
+
+    public DateTime? CreatedDate { get; set; }
+
+    public Guid? ModifiedByUserId { get; set; }
+
+    public DateTime? ModifiedDate { get; set; }
+
+    public virtual ChecklistCategory ChecklistCategory { get; set; } = null!;
+
+    public virtual ICollection<ChecklistTemplateComponent> ChecklistTemplateComponents { get; set; } = new List<ChecklistTemplateComponent>();
+
+    public virtual DocumentMetadatum DocumentMetadata { get; set; } = null!;
+
+    public virtual LetterLanguage Language { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ChecklistTemplate
+{
+    public int ChecklistTemplateId { get; set; }
+
+    public int ApplicationId { get; set; }
+
+    public int ClientId { get; set; }
+
+    public int? ClientMarketId { get; set; }
+
+    public int? ClientLobid { get; set; }
+
+    public int ProgramLengthId { get; set; }
+
+    public bool IsDeleted { get; set; }
+
+    public Guid CreatedByUserId { get; set; }
+
+    public DateTime CreatedDate { get; set; }
+
+    public Guid? ModifiedByUserId { get; set; }
+
+    public DateTime? ModifiedDate { get; set; }
+
+    public virtual Application Application { get; set; } = null!;
+
+    public virtual ICollection<ChecklistTemplateComponent> ChecklistTemplateComponents { get; set; } = new List<ChecklistTemplateComponent>();
+
+    public virtual ProgramLength ProgramLength { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ChecklistTemplateComponent
+{
+    public int ChecklistTemplateComponentId { get; set; }
+
+    public int ChecklistTemplateId { get; set; }
+
+    public int ChecklistComponentId { get; set; }
+
+    public virtual ChecklistComponent ChecklistComponent { get; set; } = null!;
+
+    public virtual ChecklistTemplate ChecklistTemplate { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ClinicalGuideline
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class ClinicalTerm
+{
+    public int ClinicalTermId { get; set; }
+
+    public string CodingStandard { get; set; } = null!;
+
+    public string? ConceptUniqueId { get; set; }
+
+    public string TermCode { get; set; } = null!;
+
+    public string? TermDescription { get; set; }
+
+    public string? RiskLevelId { get; set; }
+
+    public int? AssignedToUserId { get; set; }
+
+    public string? MaternityPhaseId { get; set; }
+
+    public int? ClientId { get; set; }
+
+    public bool? IsPregnancyIndicator { get; set; }
+
+    public bool? IsDeliveryIndicator { get; set; }
+
+    public bool? IsTermLossIndicator { get; set; }
+
+    public int? CreatedByUserId { get; set; }
+
+    public DateTime? CreatedDateTime { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+
+    public DateTime? ModifiedDateTime { get; set; }
+
+    public bool? Active { get; set; }
+
+    public bool? IsDeleted { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CmriskLevel
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class Cmstatus
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CmstatusToProgramClosureReason
+{
+    public string CmstatusCode { get; set; } = null!;
+
+    public string ProgramClosureReasonCode { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CmstratificationLevel
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationLog
+{
+    public int CommunicationLogId { get; set; }
+
+    public int ProgramId { get; set; }
+
+    public DateTime DateTimeEvent { get; set; }
+
+    public string LogTypeCode { get; set; } = null!;
+
+    public string ContactTypeCode { get; set; } = null!;
+
+    public string ContactPersonCode { get; set; } = null!;
+
+    public string MethodTypeCode { get; set; } = null!;
+
+    public string? ContactEmailAddress { get; set; }
+
+    public string? ContactPhoneNumber { get; set; }
+
+    public string? SpecifiedOtherContact { get; set; }
+
+    public bool IsLanguageLineUsage { get; set; }
+
+    public bool IsContactSuccess { get; set; }
+
+    public string? InterpreterName { get; set; }
+
+    public string? LanguageCode { get; set; }
+
+    public string? ReasonCodes { get; set; }
+
+    public string? ServicePlanOutcomeCode { get; set; }
+
+    public string? PocDiscussedMcgproblemIds { get; set; }
+
+    public string? ActionCode { get; set; }
+
+    public string? Notes { get; set; }
+
+    public string? RelatedCommunicationLogIds { get; set; }
+
+    public string? OtherContactTypeName { get; set; }
+
+    public string? OtherTypeCode { get; set; }
+
+    public bool IsAutoCreated { get; set; }
+
+    public bool? IsEdited { get; set; }
+
+    public int CreatedByUserId { get; set; }
+
+    public int? ModifiedByUserId { get; set; }
+
+    public DateTime CreatedDateTime { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationLogActionToNote
+{
+    public string ActionCode { get; set; } = null!;
+
+    public string Note { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationLogActionType
+{
+    public int Id { get; set; }
+
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+
+    public int? ParentId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationLogContactPersonType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationLogContactType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+
+    public int? SortOrder { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationLogContactTypeToContactMethodType
+{
+    public string CommunicationLogContactTypeToContactMethodTypeCode { get; set; } = null!;
+
+    public string CommunicationLogContactTypeCode { get; set; } = null!;
+
+    public string CommunicationLogContactMethodTypeCode { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationLogContactTypeToContactPersonType
+{
+    public string CommunicationLogContactTypeToContactPersonTypeCode { get; set; } = null!;
+
+    public string CommunicationLogContactTypeCode { get; set; } = null!;
+
+    public string CommunicationLogContactPersonTypeCode { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationLogContactTypeToReason
+{
+    public int Id { get; set; }
+
+    public string CommunicationLogTypeCode { get; set; } = null!;
+
+    public string ContactTypeCode { get; set; } = null!;
+
+    public string ContactMethodTypeCode { get; set; } = null!;
+
+    public string ReasonTypeCode { get; set; } = null!;
+
+    public int? ParentId { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationLogMethodType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationLogOtherType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationLogReasonType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationLogSelectedMethod
+{
+    public int CommunicationLogSelectedMethodId { get; set; }
+
+    public int CommunicationLogId { get; set; }
+
+    public string CommunicationLogMethodTypeCode { get; set; } = null!;
+
+    public string? ContactAddress { get; set; }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationLogType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationReason
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace PH.MomPath.EF.Entities;
+
+public partial class CommunicationType
+{
+    public string Code { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+}
